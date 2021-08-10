@@ -3,7 +3,8 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-#from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.options import Options
+from webdriver_manager.chrome import ChromeDriverManager
 import time
 
 from help_sheet import *
@@ -13,9 +14,9 @@ class TestConduitapp(object):
     def setup(self):
         self.driver = webdriver.Chrome("C:\\Users\\Leille\\Downloads\\chromedriver.exe")
         self.driver.get("http://localhost:1667/")
-        #browser_options = Options()
-        #browser_options.headless = True
-        #self.driver = webdriver.Chrome(ChromeDriverManager().install(), options=browser_options)
+        browser_options = Options()
+        browser_options.headless = True
+        self.driver = webdriver.Chrome(ChromeDriverManager().install(), options=browser_options)
 
     def teardown(self):
         self.driver.quit()
@@ -225,6 +226,7 @@ class TestConduitapp(object):
         with open("datafromsource.txt", "r") as f:
             comments = f.readlines()
             for i in comments:
+                self.driver.refresh()
                 time.sleep(4)
                 writecomment = self.driver.find_element_by_xpath("//textarea[@placeholder='Write a comment...']")
                 time.sleep(4)
