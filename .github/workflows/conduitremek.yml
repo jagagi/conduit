@@ -1,5 +1,4 @@
-name: conduit_app
-
+name: Conduit_app
 on:
   push:
     branches: [ master ]
@@ -22,16 +21,16 @@ jobs:
     - name: Sleep for 60 seconds
       run: sleep 60s
       shell: bash
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v2
-      with:
-        python-version: ${{ matrix.python-version }}
 
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         python -m pip install flake8 pytest
-        if [ -f test_conduit/requirements.txt ]; then pip install -r test/requirements.txt; fi
+        if [ -f test/requirements.txt ]; then pip install -r test/requirements.txt; fi
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
 
     - name: Install Chrome
       run: |
@@ -59,6 +58,7 @@ jobs:
       with:
         name: docker-logs
         path: ./logs
+
 
     - name: Deploy report to Github Pages
       if: always()
