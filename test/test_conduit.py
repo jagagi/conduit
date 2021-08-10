@@ -9,15 +9,19 @@ import time
 
 from help_sheet import *
 
+URL = 'http://localhost:1667'
 
 class TestConduitapp(object):
     def setup(self):
         browser_options = Options()
         browser_options.headless = True
         self.driver = webdriver.Chrome(ChromeDriverManager().install(), options=browser_options)
+        self.driver.get(URL)
+
 
     def teardown(self):
         self.driver.quit()
+
 
 ###########Test1_REGISTRATION
 
