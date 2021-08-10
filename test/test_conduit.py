@@ -1,4 +1,4 @@
-#import self
+import self
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
@@ -12,17 +12,12 @@ from help_sheet import *
 
 class TestConduitapp(object):
     def setup(self):
-        self.driver = webdriver.Chrome("C:\\Users\\Leille\\Downloads\\chromedriver.exe")
-        self.driver.get("http://localhost:1667/")
         browser_options = Options()
         browser_options.headless = True
         self.driver = webdriver.Chrome(ChromeDriverManager().install(), options=browser_options)
 
     def teardown(self):
         self.driver.quit()
-
-
-
 
 ###########Test1_REGISTRATION
 
@@ -31,9 +26,11 @@ class TestConduitapp(object):
         self.driver.find_element_by_xpath('//input[@placeholder="Username"]').send_keys("Leille")
         self.driver.find_element_by_xpath('//input[@placeholder="Email"]').send_keys("jageragnes01+42@gmail.com")
         self.driver.find_element_by_xpath('//input[@placeholder="Password"]').send_keys("Progmasters2021")
+
         time.sleep(4)
+
         self.driver.find_element_by_xpath('//button').click()
-        time.sleep(4)
+
         success = WebDriverWait(
             self.driver, 10).until(
             EC.visibility_of_element_located((By.XPATH, ('/html/body/div[2]/div/div[3]')))
@@ -49,6 +46,7 @@ class TestConduitapp(object):
         self.driver.find_element_by_xpath('//a[@href="#/login"]').click()
         self.driver.find_element_by_xpath('//input[@placeholder="Email"]').send_keys("jageragnes01+42@gmail.com")
         self.driver.find_element_by_xpath('//input[@placeholder="Password"]').send_keys("Progmasters2021")
+
         sign_in_button = WebDriverWait(
             self.driver, 10).until(
             EC.visibility_of_element_located((By.XPATH, ('//form/button')))
