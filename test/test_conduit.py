@@ -18,7 +18,6 @@ class TestConduitapp(object):
         self.driver = webdriver.Chrome(ChromeDriverManager().install(), options=browser_options)
         self.driver.get(URL)
 
-
     def teardown(self):
         self.driver.quit()
 
