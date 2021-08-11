@@ -167,9 +167,6 @@ class TestConduitapp(object):
 
         time.sleep(4)
 
-        okbutton = self.driver.find_element_by_xpath('/html/body/div[2]/div/div[4]/div/button')
-        okbutton.click()
-
         home = self.driver.find_element_by_xpath("//a[@href = '#/']")
         home.click()
 
