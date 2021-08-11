@@ -1,0 +1,86 @@
+{
+  "uid" : "a332af9bdaaa6351",
+  "name" : "test_multiplepages",
+  "fullName" : "test.test_conduit.TestConduitapp#test_multiplepages",
+  "historyId" : "fd604a163621f709ca3679cb4dccbacb",
+  "time" : {
+    "start" : 1628667332092,
+    "stop" : 1628667344532,
+    "duration" : 12440
+  },
+  "status" : "failed",
+  "statusMessage" : "AssertionError: assert <selenium.webdriver.remote.webelement.WebElement (session=\"14ca6cdefc90140e06dd130be23b1f68\", element=\"283cfd9d-b222-47cd-b2c9-99ad4bc04371\")> != <selenium.webdriver.remote.webelement.WebElement (session=\"14ca6cdefc90140e06dd130be23b1f68\", element=\"283cfd9d-b222-47cd-b2c9-99ad4bc04371\")>",
+  "statusTrace" : "self = <test_conduit.TestConduitapp object at 0x7fee0c903250>\n\n    def test_multiplepages(self):\n        login(self.driver)\n    \n        yourfeed = self.driver.find_element_by_xpath(\"//a[@href = '#/my-feed']\")\n        yourfeed.click()\n        firstarticle = self.driver.find_element_by_xpath('//*[@id=\"app\"]/div/div[2]/div/div[1]/div[2]/div/div/div[1]')\n    \n        time.sleep(4)\n        self.driver.execute_script(\"window.scrollTo(0, document.body.scrollHeight);\")\n    \n        time.sleep(4)\n        secondpage = self.driver.find_element_by_xpath('//ul[@class=\"pagination\"]/li[2]/a')\n        secondpage.click()\n    \n        secondpagefirstarticle = self.driver.find_element_by_xpath(\n            '//*[@id=\"app\"]/div/div[2]/div/div[1]/div[2]/div/div/div')\n>       assert firstarticle != secondpagefirstarticle\nE       assert <selenium.webdriver.remote.webelement.WebElement (session=\"14ca6cdefc90140e06dd130be23b1f68\", element=\"283cfd9d-b222-47cd-b2c9-99ad4bc04371\")> != <selenium.webdriver.remote.webelement.WebElement (session=\"14ca6cdefc90140e06dd130be23b1f68\", element=\"283cfd9d-b222-47cd-b2c9-99ad4bc04371\")>\n\ntest/test_conduit.py:120: AssertionError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "AssertionError: assert <selenium.webdriver.remote.webelement.WebElement (session=\"14ca6cdefc90140e06dd130be23b1f68\", element=\"283cfd9d-b222-47cd-b2c9-99ad4bc04371\")> != <selenium.webdriver.remote.webelement.WebElement (session=\"14ca6cdefc90140e06dd130be23b1f68\", element=\"283cfd9d-b222-47cd-b2c9-99ad4bc04371\")>",
+    "statusTrace" : "self = <test_conduit.TestConduitapp object at 0x7fee0c903250>\n\n    def test_multiplepages(self):\n        login(self.driver)\n    \n        yourfeed = self.driver.find_element_by_xpath(\"//a[@href = '#/my-feed']\")\n        yourfeed.click()\n        firstarticle = self.driver.find_element_by_xpath('//*[@id=\"app\"]/div/div[2]/div/div[1]/div[2]/div/div/div[1]')\n    \n        time.sleep(4)\n        self.driver.execute_script(\"window.scrollTo(0, document.body.scrollHeight);\")\n    \n        time.sleep(4)\n        secondpage = self.driver.find_element_by_xpath('//ul[@class=\"pagination\"]/li[2]/a')\n        secondpage.click()\n    \n        secondpagefirstarticle = self.driver.find_element_by_xpath(\n            '//*[@id=\"app\"]/div/div[2]/div/div[1]/div[2]/div/div/div')\n>       assert firstarticle != secondpagefirstarticle\nE       assert <selenium.webdriver.remote.webelement.WebElement (session=\"14ca6cdefc90140e06dd130be23b1f68\", element=\"283cfd9d-b222-47cd-b2c9-99ad4bc04371\")> != <selenium.webdriver.remote.webelement.WebElement (session=\"14ca6cdefc90140e06dd130be23b1f68\", element=\"283cfd9d-b222-47cd-b2c9-99ad4bc04371\")>\n\ntest/test_conduit.py:120: AssertionError",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "e6fbd2869627fc1",
+      "name" : "log",
+      "source" : "e6fbd2869627fc1.txt",
+      "type" : "text/plain",
+      "size" : 344
+    }, {
+      "uid" : "a2f3c504c2d6ddb0",
+      "name" : "stderr",
+      "source" : "a2f3c504c2d6ddb0.txt",
+      "type" : "text/plain",
+      "size" : 215
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 2,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "test"
+  }, {
+    "name" : "suite",
+    "value" : "test_conduit"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestConduitapp"
+  }, {
+    "name" : "host",
+    "value" : "fv-az33-581"
+  }, {
+    "name" : "thread",
+    "value" : "3803-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test.test_conduit"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "a332af9bdaaa6351.json",
+  "parameterValues" : [ ]
+}
