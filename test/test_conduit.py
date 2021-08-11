@@ -114,6 +114,8 @@ class TestConduitapp(object):
         time.sleep(4)
         secondpage = self.driver.find_element_by_xpath('//ul[@class="pagination"]/li[2]/a')
         secondpage.click()
+        
+        time.sleep(4)
 
         secondpagefirstarticle = self.driver.find_element_by_xpath(
             '//*[@id="app"]/div/div[2]/div/div[1]/div[2]/div/div/div')
