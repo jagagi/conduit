@@ -1,0 +1,11 @@
+A_001 regisztráció
+A_002 bejelentkezés
+A_003 kijelentkezés
+A_004 cookie elfogadás
+A_005 lapozás
+A_006 új cikk létrehozása
+A_007 cikk törlése
+A_008 felhasználó szerkesztése
+A_009 tagek listázása
+A_010 új kommentek létrehozása ismételten, fájlból
+A_011 tagek listájának lementése felületről
